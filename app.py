@@ -9,9 +9,11 @@ from pydantic import BaseModel
 import uvicorn
 from typing import List, Optional
 import os
+from dotenv import load_dotenv
 
-# Init app
-app = FastAPI(title="Advanced Game Analytics API")
+load_dotenv()
+
+RAWG_API_KEY = os.getenv("RAWG_API_KEY")
 
 # CORS
 app.add_middleware(
